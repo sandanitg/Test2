@@ -1,0 +1,9 @@
+.active{
+    background-color: dimgray;
+}
+
+tr:hover{
+    cursor: pointer;
+    transition: 0.3ms;
+    background-color: aqua;
+}

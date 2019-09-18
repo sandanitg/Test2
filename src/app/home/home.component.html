@@ -1,0 +1,34 @@
+<div  *ngIf="selectedUser">
+    <p>Selected User... </p>
+    <p>User Name: {{ selectedUser.name }}</p>
+    <p>Age : {{ selectedUser.age }}</p>
+    <app-test [name]="selectedUser.name"></app-test>
+</div>
+
+{{newUser.name}}
+{{newUser.age}}
+
+<table border="2">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td>
+            <input [(ngModel)]="newUser.name" type="text">
+        </td>
+        <td>
+            <input [(ngModel)]="newUser.age" type="number">
+        </td>
+        <td>
+            <button (click)="onAdd()">
+                Add
+            </button>
+        </td>
+    </tr>
+    <tr *ngFor="let user of users" (click)="selectUser(user)" [class.active]="selectedUser==user">
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+    </tr>
+</table>
